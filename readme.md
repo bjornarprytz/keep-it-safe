@@ -6,6 +6,50 @@ Stipulation: Text based
 
 ## TODO
 
+### First Loop
+
+- Enter scene, move from left to right, transition to the next
+
+- Game Loop
+  1. Enter scene
+  2. Solve puzzle /dialogue
+     1. Death? Restart Scene -> 1.
+  3. Exit scene
+  4. Transition -> 1.
+
+- Character
+  - Movement (left/right)
+
+- Scene
+  - Enter, exit events
+  - Ground
+  - Parallax (3 layers)
+  - Call scene framwework hooks (load assets, characters, events, etc.)
+
+- UI
+  - TextBox for dialogue
+
+- Mechanics
+  - Move the pixel around the character
+  - Dialogue (use dialogic?)
+
+- Scene framework
+  - Scene Graph
+    - Define transitions, allow randomness
+  - Procedures
+    - Load assets
+  - Per Scene
+    - Game elements
+      - Ground (Flat/slanted?)
+      - Characters (e.g. Troll, ghosts)
+      - Scripted events
+        - Lose/Win condition (default win con is to move all the way to the right)
+    - Assets
+      - Foreground (1 sprite)
+      - Background (1 sprite)
+      - Middle ground
+        - brushes, etc
+
 - Push release with `./push_release.sh`
 
 ### Extra
