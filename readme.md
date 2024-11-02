@@ -10,16 +10,6 @@ Stipulation: Text based
 
 - Enter scene, move from left to right, transition to the next
 
-- Game Loop
-  1. Enter scene
-  2. Solve puzzle /dialogue
-     1. Death? Restart Scene -> 1.
-  3. Exit scene
-  4. Transition -> 1.
-
-- Character
-  - Movement (left/right)
-
 - Scene
   - Enter, exit events
   - Ground

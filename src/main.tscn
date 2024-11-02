@@ -1,40 +1,62 @@
-[gd_scene format=3 uid="uid://cgrejd4v5ywd3"]
+[gd_scene load_steps=8 format=3 uid="uid://cgrejd4v5ywd3"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_hrkt0"]
+[ext_resource type="PackedScene" uid="uid://ddae51l1mo301" path="res://player.tscn" id="1_lvotm"]
+[ext_resource type="Texture2D" uid="uid://bcquoe7nf57cj" path="res://Nøkken.png" id="2_5seeh"]
+[ext_resource type="Texture2D" uid="uid://dqtywi5mesf16" path="res://ForestBackground.png" id="2_rymx4"]
+[ext_resource type="Texture2D" uid="uid://dvrqqxr1slwqj" path="res://PineTops.png" id="5_4f4xb"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_iakng"]
+distance = -599.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_51pd7"]
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_hrkt0")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="BackgroundParallax" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.5, 0.5)
+repeat_size = Vector2(1461, 0)
+repeat_times = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -145.0
-offset_top = -88.0
-offset_right = 145.0
-offset_bottom = 84.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Background" type="Sprite2D" parent="BackgroundParallax"]
+position = Vector2(649, 352)
+texture = ExtResource("2_rymx4")
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/PanelContainer"]
-layout_mode = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 5
-theme_override_constants/margin_bottom = 5
+[node name="Sprite2D" type="Sprite2D" parent="BackgroundParallax/Background"]
+position = Vector2(45, 205)
+scale = Vector2(0.595745, 0.595745)
+texture = ExtResource("2_5seeh")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer"]
-layout_mode = 2
+[node name="Ground" type="StaticBody2D" parent="."]
 
-[node name="Title" type="RichTextLabel" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_type_variation = &"Title"
-bbcode_enabled = true
-text = "[u]Hello World"
-fit_content = true
+[node name="Boundary" type="CollisionShape2D" parent="Ground"]
+shape = SubResource("WorldBoundaryShape2D_iakng")
 
-[node name="Title2" type="RichTextLabel" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-text = "This is the main text"
+[node name="Player" parent="." instance=ExtResource("1_lvotm")]
+unique_name_in_owner = true
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.0142752, 0.0142752, 0.0142752, 1)
+
+[node name="Exit" type="Area2D" parent="."]
+position = Vector2(1204, 540)
+rotation = -1.57079
+
+[node name="Boundary" type="CollisionShape2D" parent="Exit"]
+shape = SubResource("WorldBoundaryShape2D_51pd7")
+
+[node name="Camera" type="Camera2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(323, 360)
+
+[node name="ForegroundParallax" type="Parallax2D" parent="."]
+scroll_scale = Vector2(2, 2)
+repeat_size = Vector2(608, 0)
+repeat_times = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="ForegroundParallax"]
+position = Vector2(608, 699)
+texture = ExtResource("5_4f4xb")
+
+[connection signal="body_entered" from="Exit" to="." method="_on_exit_body_entered"]
