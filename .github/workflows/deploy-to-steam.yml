@@ -4,7 +4,7 @@ name: Publish to Steam
 on:
   push:
     tags:
-      - "v*"
+      - "steam*"
 
 env:
   GAME_NAME: keep-it-safe

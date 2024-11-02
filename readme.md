@@ -3,19 +3,9 @@
 game on itch.io: [link](https://thewarlock.itch.io/keep-it-safe)
 
 Stipulation: Text based
- 
+
 ## TODO
 
-- Import the project into Godot
-
-- Setup itch.io page for keep-it-safe [link](https://itch.io/game/new)
-  - Set Kind to HTML
-  - Set viewport dimensions (normal: 1280x720)
-  - Check SharedArrayBuffer
-  - Hit the Save button
-- Get Butler API key from [itch.io](https://itch.io/user/settings/api-keys)
-- Publish github repo
-- Add key to GitHub secrets as BUTLER_API_KEY [link](https://github.com/bjornarprytz/keep-it-safe/settings/secrets/actions)
 - Push release with `./push_release.sh`
 
 ### Extra
@@ -29,10 +19,12 @@ Stipulation: Text based
   - Add a tag or two
   - Publish a devlog on instagram
 
+### Useful links
+
+- [Color palette](https://colorsupplyyy.com/app)
+- [Hex grids](https://www.redblobgames.com/grids/hexagons/)
+
 ### Meta
 
-- Figure out how to use these Godot tools
-  - Theme
-  - UI
 - Tackle multiplayer in HTML5
   - https://www.reddit.com/r/godot/comments/bux2hs/how_to_use_godots_high_level_multiplayer_api_with/
