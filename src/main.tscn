@@ -43,7 +43,7 @@ unique_name_in_owner = true
 color = Color(0.0142752, 0.0142752, 0.0142752, 1)
 
 [node name="Exit" type="Area2D" parent="."]
-position = Vector2(1204, 540)
+position = Vector2(601, 538)
 rotation = -1.57079
 
 [node name="Boundary" type="CollisionShape2D" parent="Exit"]
@@ -63,6 +63,7 @@ position = Vector2(608, 699)
 texture = ExtResource("5_4f4xb")
 
 [node name="UI" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="Dialogue" parent="UI" node_paths=PackedStringArray("responses_menu") instance=ExtResource("7_j2y81")]
 unique_name_in_owner = true
