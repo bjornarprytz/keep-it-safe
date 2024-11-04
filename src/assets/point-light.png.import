@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvrqqxr1slwqj"
-path="res://.godot/imported/PineTops.png-ed846ebcad6b942b1196ae6ae54cf916.ctex"
+uid="uid://cn7hqbyumtn33"
+path="res://.godot/imported/point-light.png-98796f182b6ec6b862304ac40f5533ea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://PineTops.png"
-dest_files=["res://.godot/imported/PineTops.png-ed846ebcad6b942b1196ae6ae54cf916.ctex"]
+source_file="res://assets/point-light.png"
+dest_files=["res://.godot/imported/point-light.png-98796f182b6ec6b862304ac40f5533ea.ctex"]
 
 [params]
 

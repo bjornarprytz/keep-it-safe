@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2vx5ff02crdv"]
+
+[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_reponses_menu.gd" id="1_kpxn7"]
+
+[node name="ResponsesMenu" type="VBoxContainer" node_paths=PackedStringArray("response_template")]
+size_flags_vertical = 8
+theme_override_constants/separation = 2
+script = ExtResource("1_kpxn7")
+response_template = NodePath("ResponseExample")
+
+[node name="ResponseExample" type="Button" parent="."]
+layout_mode = 2
+text = "Response example"

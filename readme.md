@@ -8,6 +8,8 @@ Stipulation: Text based
 
 ### First Loop
 
+- Import from twine to dialogue manager
+
 - Enter scene, move from left to right, transition to the next
 
 - Scene

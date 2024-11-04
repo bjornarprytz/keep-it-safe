@@ -20,6 +20,11 @@ config/icon="res://icon.svg"
 Utility="*res://autoloads/utility.gd"
 Events="*res://autoloads/event_bus.gd"
 Create="*res://autoloads/factory.gd"
+DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+
+[dialogue_manager]
+
+general/balloon_path="res:///balloon.tscn"
 
 [display]
 
@@ -32,6 +37,10 @@ window/stretch/mode="viewport"
 
 project/assembly_name="keep-it-safe"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
+
 [gui]
 
 theme/custom="res://global_theme.tres"
@@ -41,6 +50,10 @@ theme/custom="res://global_theme.tres"
 texture={
 "mipmaps/generate": true
 }
+
+[internationalization]
+
+locale/translations_pot_files=PackedStringArray("res://dialogue/test.dialogue")
 
 [rendering]
 
