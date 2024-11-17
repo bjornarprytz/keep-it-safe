@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cgrejd4v5ywd3"]
+[gd_scene load_steps=11 format=3 uid="uid://cgrejd4v5ywd3"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_hrkt0"]
 [ext_resource type="PackedScene" uid="uid://ddae51l1mo301" path="res://player.tscn" id="1_lvotm"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dvrqqxr1slwqj" path="res://assets/PineTops.png" id="5_4f4xb"]
 [ext_resource type="PackedScene" uid="uid://c2vx5ff02crdv" path="res://responses_menu.tscn" id="7_fbnql"]
 [ext_resource type="PackedScene" uid="uid://73jm5qjy52vq" path="res://dialogue.tscn" id="7_j2y81"]
+[ext_resource type="PackedScene" uid="uid://cxse4ko7ipoab" path="res://characters/swarm_area.tscn" id="8_yciiv"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_iakng"]
 distance = -599.0
@@ -55,6 +56,7 @@ position = Vector2(323, 360)
 
 [node name="ForegroundParallax" type="Parallax2D" parent="."]
 scroll_scale = Vector2(2, 2)
+scroll_offset = Vector2(78, 157)
 repeat_size = Vector2(608, 0)
 repeat_times = 2
 
@@ -81,5 +83,9 @@ offset_left = 433.0
 offset_top = 390.0
 offset_right = 586.0
 offset_bottom = 421.0
+
+[node name="SwarmArea" parent="." instance=ExtResource("8_yciiv")]
+position = Vector2(316, 438)
+type = 1
 
 [connection signal="body_entered" from="Exit" to="." method="_on_exit_body_entered"]

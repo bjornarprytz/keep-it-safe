@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://cyttc26wdxn1m"]
+
+[ext_resource type="Texture2D" uid="uid://bgbo4h36rrxxk" path="res://assets/fly-sheet.png" id="1_og8vh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4i4go"]
+atlas = ExtResource("1_og8vh")
+region = Rect2(0, 0, 2, 2)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5hway"]
+atlas = ExtResource("1_og8vh")
+region = Rect2(2, 0, 2, 2)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rjcjk"]
+atlas = ExtResource("1_og8vh")
+region = Rect2(4, 0, 2, 2)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ihkyx"]
+atlas = ExtResource("1_og8vh")
+region = Rect2(6, 0, 2, 2)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o7a04"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4i4go")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5hway")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rjcjk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ihkyx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 24.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3kmwq"]
+size = Vector2(8, 8)
+
+[node name="Fly" type="Area2D"]
+
+[node name="Animation" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(4, -4)
+scale = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_o7a04")
+autoplay = "default"
+
+[node name="Shape" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_3kmwq")

@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://10w3bqito6do"]
+
+[ext_resource type="Script" path="res://characters/firefly.gd" id="1_8g3u8"]
+[ext_resource type="Texture2D" uid="uid://bqe6igednjk3i" path="res://assets/white-square.png" id="2_bbwwg"]
+[ext_resource type="Texture2D" uid="uid://cn7hqbyumtn33" path="res://assets/point-light.png" id="3_hic0v"]
+
+[node name="Firefly" type="Node2D"]
+script = ExtResource("1_8g3u8")
+
+[node name="Fly" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+modulate = Color(1, 1, 0.247059, 1)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_bbwwg")
+
+[node name="ProcessFrequency" type="Timer" parent="."]
+wait_time = 1.69
+autostart = true
+
+[node name="Glow" type="PointLight2D" parent="."]
+unique_name_in_owner = true
+color = Color(0.549184, 0.549184, 0, 1)
+texture = ExtResource("3_hic0v")
+
+[connection signal="timeout" from="ProcessFrequency" to="." method="_course_correct"]

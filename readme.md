@@ -8,39 +8,21 @@ Stipulation: Text based
 
 ### First Loop
 
-- Import from twine to dialogue manager
-
-- Enter scene, move from left to right, transition to the next
-
-- Scene
-  - Enter, exit events
-  - Ground
-  - Parallax (3 layers)
-  - Call scene framwework hooks (load assets, characters, events, etc.)
-
-- UI
-  - TextBox for dialogue
-
-- Mechanics
-  - Move the pixel around the character
-  - Dialogue (use dialogic?)
-
-- Scene framework
-  - Scene Graph
-    - Define transitions, allow randomness
-  - Procedures
-    - Load assets
-  - Per Scene
-    - Game elements
-      - Ground (Flat/slanted?)
-      - Characters (e.g. Troll, ghosts)
-      - Scripted events
-        - Lose/Win condition (default win con is to move all the way to the right)
-    - Assets
-      - Foreground (1 sprite)
-      - Background (1 sprite)
-      - Middle ground
-        - brushes, etc
+- Moth-behaviour
+  - Land on the cube
+- Dialogue
+  - Dialogue trees
+  - Speech bubbles
+- Effects
+  - Camera Shake
+  - Zoom
+    - Out (Target)
+    - In (Target)
+    - Reset
+  - Tracking (character)
+  - Booming/Craning (up/down)
+  - Light/Shadow
+    - Moonlight through the canopy
 
 - Push release with `./push_release.sh`
 

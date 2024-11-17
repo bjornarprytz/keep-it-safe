@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxse4ko7ipoab"]
+
+[ext_resource type="Script" path="res://characters/swarm_area.gd" id="1_n8jva"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ibomy"]
+radius = 62.0322
+
+[node name="SwarmArea" type="Area2D"]
+script = ExtResource("1_n8jva")
+
+[node name="Shape" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ibomy")

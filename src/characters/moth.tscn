@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://n6wam8mdv11k"]
+
+[ext_resource type="Script" path="res://characters/moth.gd" id="1_yak3k"]
+[ext_resource type="PackedScene" uid="uid://cyttc26wdxn1m" path="res://characters/fly.tscn" id="2_l1cj5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v2rd2"]
+radius = 116.069
+
+[node name="Moth" type="Node2D"]
+script = ExtResource("1_yak3k")
+
+[node name="Fly" parent="." instance=ExtResource("2_l1cj5")]
+unique_name_in_owner = true
+
+[node name="Awareness" type="Area2D" parent="."]
+unique_name_in_owner = true
+
+[node name="Shape" type="CollisionShape2D" parent="Awareness"]
+shape = SubResource("CircleShape2D_v2rd2")
+
+[node name="ProcessFrequency" type="Timer" parent="."]
+wait_time = 1.69
+autostart = true
+
+[connection signal="area_entered" from="Fly" to="." method="_on_fly_area_entered"]
+[connection signal="area_entered" from="Awareness" to="." method="_on_awareness_area_entered"]
+[connection signal="timeout" from="ProcessFrequency" to="." method="_course_correct"]
