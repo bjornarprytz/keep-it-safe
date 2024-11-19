@@ -1,17 +1,90 @@
-[gd_scene load_steps=4 format=3 uid="uid://10w3bqito6do"]
+[gd_scene load_steps=14 format=3 uid="uid://10w3bqito6do"]
 
 [ext_resource type="Script" path="res://characters/firefly.gd" id="1_8g3u8"]
-[ext_resource type="Texture2D" uid="uid://bqe6igednjk3i" path="res://assets/white-square.png" id="2_bbwwg"]
 [ext_resource type="Texture2D" uid="uid://cn7hqbyumtn33" path="res://assets/point-light.png" id="3_hic0v"]
+[ext_resource type="Texture2D" uid="uid://bgbo4h36rrxxk" path="res://assets/fly-sheet.png" id="4_fs6dt"]
+[ext_resource type="Texture2D" uid="uid://br2s6l8iskjxk" path="res://assets/fly-sheet-yellow.png" id="5_y54pv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4i4go"]
+atlas = ExtResource("4_fs6dt")
+region = Rect2(0, 0, 2, 2)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5hway"]
+atlas = ExtResource("4_fs6dt")
+region = Rect2(2, 0, 2, 2)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rjcjk"]
+atlas = ExtResource("4_fs6dt")
+region = Rect2(4, 0, 2, 2)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ihkyx"]
+atlas = ExtResource("4_fs6dt")
+region = Rect2(6, 0, 2, 2)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4sbxb"]
+atlas = ExtResource("5_y54pv")
+region = Rect2(0, 0, 2, 2)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tle6e"]
+atlas = ExtResource("5_y54pv")
+region = Rect2(2, 0, 2, 2)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m8nfg"]
+atlas = ExtResource("5_y54pv")
+region = Rect2(4, 0, 2, 2)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h6r2p"]
+atlas = ExtResource("5_y54pv")
+region = Rect2(6, 0, 2, 2)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jmdw6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4i4go")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5hway")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rjcjk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ihkyx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4sbxb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tle6e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m8nfg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h6r2p")
+}],
+"loop": true,
+"name": &"firefly",
+"speed": 12.0
+}]
 
 [node name="Firefly" type="Node2D"]
 script = ExtResource("1_8g3u8")
 
-[node name="Fly" type="Sprite2D" parent="."]
+[node name="Fly" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
-modulate = Color(1, 1, 0.247059, 1)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("2_bbwwg")
+texture_filter = 1
+position = Vector2(4, -4)
+scale = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_jmdw6")
+animation = &"firefly"
+autoplay = "firefly"
 
 [node name="ProcessFrequency" type="Timer" parent="."]
 wait_time = 1.69
@@ -21,5 +94,7 @@ autostart = true
 unique_name_in_owner = true
 color = Color(0.549184, 0.549184, 0, 1)
 texture = ExtResource("3_hic0v")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
 
 [connection signal="timeout" from="ProcessFrequency" to="." method="_course_correct"]

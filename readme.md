@@ -8,8 +8,6 @@ Stipulation: Text based
 
 ### First Loop
 
-- Moth-behaviour
-  - Land on the cube
 - Dialogue
   - Dialogue trees
   - Speech bubbles

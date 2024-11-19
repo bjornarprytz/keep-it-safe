@@ -18,12 +18,12 @@ func _course_correct() -> void:
 	var new_direction: Vector2 = _direction
 	match state:
 		State.FLYING:
-			## Change direction to a random direction within 30 degrees of the direction to the target.
-			new_direction = _target.global_position.direction_to(body.global_position).rotated(randf_range(-15, 15))
+			## Change direction to a random direction within 10 degrees of the direction to the target.
+			new_direction = body.global_position.direction_to(_target.global_position).rotated(deg_to_rad(randf_range(-15, 15)))
 		_:
 			if (body.global_position - home.global_position).length() > home.radius:
 				## Change direction to a random direction within 30 degrees of the direction to the home.
-				new_direction = home.global_position.direction_to(body.global_position).rotated(randf_range(-15, 15))
+				new_direction = body.global_position.direction_to(home.global_position).rotated(deg_to_rad(randf_range(-30, 30)))
 	var tween = create_tween()
 	tween.tween_property(self, "_direction", new_direction, .69)
 
@@ -36,6 +36,6 @@ func _on_fly_area_entered(area: Area2D) -> void:
 		queue_free()
 
 func _on_awareness_area_entered(area: Area2D) -> void:
-	if area.owner is Pixel:
+	if area is Pixel:
 		state = State.FLYING
 		_target = area

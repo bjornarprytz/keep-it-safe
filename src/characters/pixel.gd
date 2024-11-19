@@ -4,7 +4,7 @@ extends Area2D
 const SPEED: float = 200.0
 
 @export var pixel_boundary: float = 25.0 # Radius of the pixel boundary.
-@export var moth_tolerance: int = 10 # Distance from the moth to trigger landing.
+@export var moth_tolerance: int = 10 # How many moths before game over
 
 var landed_moths: int = 0
 
@@ -20,14 +20,21 @@ func _process(_delta: float) -> void:
 
 	if distance > 0:
 		direction = direction.normalized()
-		pixel.position = direction * distance
+		position = direction * distance
 	
 	_update_light_intensity()
 
 
 func moth_landed(moth: Moth) -> void:
+	landed_moths += 1
 	_update_light_intensity()
-	## TODO: Add black squares to the pixel to represent landed moths.
+	
+	await Utility.shake(pixel, .2, 3.0, Vector2.ZERO).finished
 
 func _update_light_intensity() -> void:
-	light.scale = Vector2.ONE * (pixel.position.y - pixel_boundary) / (pixel_boundary * 2) - (Vector2.ONE * (landed_moths / float(moth_tolerance)))
+	var elevation = abs((pixel.position.y - pixel_boundary) / (pixel_boundary * 2))
+	var clutter = 1.0 - (landed_moths / float(moth_tolerance))
+	
+	var strength = elevation * clutter
+	
+	light.scale = Vector2.ONE * strength

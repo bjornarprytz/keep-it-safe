@@ -19,7 +19,6 @@ unique_name_in_owner = true
 shape = SubResource("CircleShape2D_v2rd2")
 
 [node name="ProcessFrequency" type="Timer" parent="."]
-wait_time = 1.69
 autostart = true
 
 [connection signal="area_entered" from="Fly" to="." method="_on_fly_area_entered"]

@@ -40,6 +40,14 @@ shape = SubResource("WorldBoundaryShape2D_iakng")
 [node name="Player" parent="." instance=ExtResource("1_lvotm")]
 unique_name_in_owner = true
 
+[node name="FireflySwarm" parent="." instance=ExtResource("8_yciiv")]
+position = Vector2(316, 438)
+type = 1
+
+[node name="MothSwarm" parent="." instance=ExtResource("8_yciiv")]
+position = Vector2(168, 521)
+count = 3
+
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.0142752, 0.0142752, 0.0142752, 1)
 
@@ -83,9 +91,5 @@ offset_left = 433.0
 offset_top = 390.0
 offset_right = 586.0
 offset_bottom = 421.0
-
-[node name="SwarmArea" parent="." instance=ExtResource("8_yciiv")]
-position = Vector2(316, 438)
-type = 1
 
 [connection signal="body_entered" from="Exit" to="." method="_on_exit_body_entered"]
