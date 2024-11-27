@@ -19,7 +19,7 @@ func _process(_delta: float) -> void:
 func _on_exit_body_entered(body: Node2D) -> void:
 	
 	$UI.show()
-	dialogue.start(text, "test_dialogue")
+	dialogue.start(text, "start")
 	
 	#print("%s exited" % [body.name])
 	#get_tree().call_deferred("reload_current_scene") # TODO: Load next scene, not the same

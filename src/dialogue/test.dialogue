@@ -1,11 +1,24 @@
-~ test_dialogue
-Nathan: [[Hi|Hello|Howdy]], this is some dialogue.
-Nathan: Here are some choices.
-- First one
-	Nathan: You picked the first one.
-- Second one
-	Nathan: You picked the second one.
-- Start again => test_dialogue
-- End the conversation => END
-Nathan: For more information see the online documentation.
+~ start
+Troll: "Stooop! What’s thiiis? A tiny thing, wanderin' alooone... Carryin' somethin', aren't ya? Hmm, whaat is it?"
+- It's nothing
+	You: "It’s nothing. Just something I found."
+	=> _1_1
+- None of you concern
+	You: "What I carry is none of your concern."
+	=> one_2
+- Not worth your time
+	You: "It’s just a trinket, not worth your time."
+	=> _1_3
+=> END
+
+~ _1_1
+Troll: You are now at 1.1
+=> END
+
+~ _1_2
+Troll: You are now at 1.2
+=> END
+
+~ _1_3
+Troll: You are now at 1.3
 => END
