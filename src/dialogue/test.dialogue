@@ -2,23 +2,156 @@
 Troll: "Stooop! What’s thiiis? A tiny thing, wanderin' alooone... Carryin' somethin', aren't ya? Hmm, whaat is it?"
 - It's nothing
 	You: "It’s nothing. Just something I found."
-	=> _1_1
+	=> nothing1
 - None of you concern
 	You: "What I carry is none of your concern."
-	=> one_2
+	=> none_of_your_concern
 - Not worth your time
 	You: "It’s just a trinket, not worth your time."
-	=> _1_3
+	=> trinket
 => END
 
-~ _1_1
-Troll: You are now at 1.1
+~ nothing1
+[i]Troll squints at you, leaning closer.[/i]
+Troll: "Tiny, tiny lies from a tiny, tiny thing. Tell meee, little one—what’s in yer hand? Hmm? Hmm?"
+- My keepsake
+	You: "It’s...a keepsake. From a friend."
+	=> keepsake
+- Worthless to you
+	You: "It’s shiny, but worthless to you!"
+	=> worthless
+- Behind you!
+	You: "Oh no! I think I dropped it behind you!"
+	=> behind_you
+- Already told you
+	You: "I already told you—it’s nothing!"
+	=> nothing2
 => END
 
-~ _1_2
-Troll: You are now at 1.2
+~ keepsake
+[i]Troll snorts, its breath heavy with the scent of mushrooms and damp earth.[/i]
+Troll: "Frieeend? Trolls don’t haaave friends. Trolls only haaave things! Show me—it!"
+- It's mine
+	You: "No! It's mine!"
+	=> failure
+- It's cursed
+	You: "It's cursed! You don't want to touch it!"
+	=> cursed
 => END
 
-~ _1_3
-Troll: You are now at 1.3
+~ worthless
+[i]Troll’s eyes gleam as it leans closer.[/i]
+Troll: "Shiiiny? Trolls LOVE shiny things. Show it, or trolls might taaake it!"
+- It's just paint
+	You: "It’s really not worth it. It’s just golden paint!"
+	=> golden
+- Behind you!
+	You: "Oh no! I think I dropped it behind you!"
+	=> behind_you
+=> END
+
+~ nothing2
+[i]Troll huffs, its face scrunching up in mock disbelief.[/i]
+Troll: "Nothiiing? Trolls don’t believe in nothiiing. Liiiies! You’ll tell me, or trolls will take it!"
+- My keepsake
+	You: "It’s...a keepsake. From a friend."
+	=> keepsake
+- Worthless to yoy
+	You: "It’s shiny, but worthless to you!"
+	=> worthless
+- It's cursed
+	You: "It’s cursed! You don’t want to touch it!"
+	=> cursed
+
+
+~ cursed
+[i]Troll recoils, its eyes wide with fear.[/i]
+Troll: "Cursed?! What kind of curse? Trolls don’t like curses... verrry bad luck for trolls."
+- Sneezing curse
+	You: "A sneezing curse—nonstop sneezing!"
+- Memory curse
+	You: "A memory curse—it makes trolls forget where their treasures are hidden."
+
+[i]Troll grumbles and waves you away.[/i]
+Troll: "Nooo, no curses here! Take it faaaar away, tiny thing. Shoo!"
+
+[i]You escape unscathed as the troll retreats into the trees.[/i]
+=> END
+
+~ behind_you
+
+=> END
+
+~ none_of_your_concern
+[i]Troll’s grin widens, teeth crooked and yellow.[/i]
+Troll: "Nooonne of my concern? But I am concerned! Verrry concerned. It’s sparkly, isn’t it? Shiiiny? Tell me—what is it made of?!"
+- Golden
+	You: "It’s not shiny. It’s just...golden."
+- Why do you care?
+	You:  "Why do you even care?"
+	=> failure
+- It's cursed
+	You: "It’s cursed! Touch it, and terrible things will happen!"
+	=> cursed
+=> END
+
+~ golden
+
+Troll squints suspiciously.
+ "Gooolden? Gold is shiny, stupid tiny thing! Liiies again!"
+- It's fake
+	You: "It’s not real gold, just paint!"
+	=> start
+- It's mine!
+	You: "Fine, it’s shiny. But it’s mine!" (Escalates to failure or fight.)
+	=> failure
+
+
+~ trinket
+[i]Troll’s ears twitch, its curiosity undimmed.[/i]
+Troll: "A trinket? A TRIINKET! A troll knows trinkets. Knows treasures. But I dooon’t know this one. Tell me—what does it dooo?"
+- Nothing
+	You: "It doesn't [i]do[/i] anything!"
+- Protect
+	You: "It protects me."
+	=> protects
+- A game piece
+	You: "It’s a game piece! Care to guess what it’s for?"
+	=> game_piece
+- You wouldn't understand
+	You: "You wouldn't even understand!"
+	=> failure
+
+=> END
+
+~ protects
+[i]Troll’s eyes widen with glee.[/i]
+Troll: "Protects you? Protects from whaat? Trolls? Wolves? Magic?! Tell meee, tiny thing—how does it work?"
+- Not from you
+	You: "It doesn’t protect from you."
+	=> failure
+- Too complex for you
+	You: "You wouldn’t understand."
+	=> failure
+
+~ does_nothing
+[i]Troll stares, unimpressed.[/i]
+Troll: "Nothing? Things always dooo something! Trolls will take it and see what it doooes."
+=> start
+
+
+~ game_piece
+[i]Troll scratches its head, intrigued.[/i]
+Troll: "A game?! Trolls love games! Is it for cards? For dice? For throwing?!"
+- Secret
+	You: "Oh, it’s for a troll game. A secret troll game!"
+- Guessing
+	You: "It’s for a guessing game! But only smart trolls can figure it out."
+
+Troll becomes distracted, trying to figure out your “game.” You take the opportunity to sneak away while it babbles about rules and guesses.
+
+
+=> END
+~ failure
+The troll grabs at you, nearly snatching the golden pixel! You barely escape, but you’re forced to give away the pixel.
 => END

@@ -11,16 +11,10 @@ Stipulation: Text based
 - Dialogue
   - Dialogue trees
   - Speech bubbles
-- Effects
-  - Camera Shake
-  - Zoom
-    - Out (Target)
-    - In (Target)
-    - Reset
-  - Tracking (character)
-  - Booming/Craning (up/down)
-  - Light/Shadow
-    - Moonlight through the canopy
+
+- Troll dialogue
+
+- Opening scene
 
 - Push release with `./push_release.sh`
 
