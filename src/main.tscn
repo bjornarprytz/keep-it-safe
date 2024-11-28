@@ -2,55 +2,59 @@
 
 [ext_resource type="Script" path="res://main.gd" id="1_hrkt0"]
 [ext_resource type="PackedScene" uid="uid://ddae51l1mo301" path="res://player.tscn" id="1_lvotm"]
-[ext_resource type="Texture2D" uid="uid://bcquoe7nf57cj" path="res://assets/Nøkken.png" id="2_5seeh"]
-[ext_resource type="Texture2D" uid="uid://dqtywi5mesf16" path="res://assets/ForestBackground.png" id="2_rymx4"]
-[ext_resource type="Texture2D" uid="uid://dvrqqxr1slwqj" path="res://assets/PineTops.png" id="5_4f4xb"]
+[ext_resource type="Texture2D" uid="uid://0htibuc27okp" path="res://assets/background2.png" id="2_ltykb"]
+[ext_resource type="Texture2D" uid="uid://ct3ex4ht6av68" path="res://assets/background1.png" id="3_3v22p"]
 [ext_resource type="Texture2D" uid="uid://jo4n0bji3e6v" path="res://assets/ground.png" id="5_rfu6w"]
+[ext_resource type="Texture2D" uid="uid://btevoelkh4myp" path="res://assets/foreground.png" id="7_ew61w"]
 [ext_resource type="PackedScene" uid="uid://c2vx5ff02crdv" path="res://responses_menu.tscn" id="7_fbnql"]
 [ext_resource type="PackedScene" uid="uid://73jm5qjy52vq" path="res://dialogue.tscn" id="7_j2y81"]
 [ext_resource type="PackedScene" uid="uid://cxse4ko7ipoab" path="res://characters/swarm_area.tscn" id="8_yciiv"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_iakng"]
-distance = -599.0
+distance = -676.0
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_51pd7"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_hrkt0")
 
-[node name="BackgroundParallax" type="Parallax2D" parent="."]
+[node name="WayBackgroundParallax" type="Parallax2D" parent="."]
+modulate = Color(0.281187, 0.281187, 0.281187, 1)
 scroll_scale = Vector2(0.5, 0.5)
-repeat_size = Vector2(1461, 0)
+repeat_size = Vector2(1280, 0)
+repeat_times = 2
+
+[node name="Background" type="Sprite2D" parent="WayBackgroundParallax"]
+position = Vector2(655, 358)
+texture = ExtResource("2_ltykb")
+
+[node name="BackgroundParallax" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.85, 0.85)
+repeat_size = Vector2(1280, 0)
 repeat_times = 2
 
 [node name="Background" type="Sprite2D" parent="BackgroundParallax"]
-position = Vector2(649, 352)
-texture = ExtResource("2_rymx4")
+position = Vector2(649, 319)
+texture = ExtResource("3_3v22p")
 
 [node name="Ground" type="StaticBody2D" parent="."]
 
 [node name="Boundary" type="CollisionShape2D" parent="Ground"]
 shape = SubResource("WorldBoundaryShape2D_iakng")
 
-[node name="Nøkken" type="Sprite2D" parent="."]
-unique_name_in_owner = true
-position = Vector2(694, 557)
-scale = Vector2(0.595745, 0.595745)
-texture = ExtResource("2_5seeh")
-
 [node name="Player" parent="." instance=ExtResource("1_lvotm")]
 unique_name_in_owner = true
 
 [node name="FireflySwarm" parent="." instance=ExtResource("8_yciiv")]
-position = Vector2(316, 438)
+position = Vector2(393, 589)
 type = 1
 
 [node name="MothSwarm" parent="." instance=ExtResource("8_yciiv")]
-position = Vector2(168, 521)
+position = Vector2(-199, 598)
 count = 3
 
 [node name="Exit" type="Area2D" parent="."]
-position = Vector2(601, 538)
+position = Vector2(1823, 596)
 rotation = -1.57079
 
 [node name="Boundary" type="CollisionShape2D" parent="Exit"]
@@ -61,27 +65,29 @@ repeat_size = Vector2(400, 0)
 repeat_times = 9
 
 [node name="Ground" type="Sprite2D" parent="MidgroundParallax"]
-position = Vector2(110, 661)
-scale = Vector2(1, 3.05)
+position = Vector2(110, 699)
+scale = Vector2(1, 1.15)
 texture = ExtResource("5_rfu6w")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
-color = Color(0.0142752, 0.0142752, 0.0142752, 1)
+color = Color(0.136826, 0.136826, 0.136826, 1)
 
 [node name="Camera" type="Camera2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(323, 360)
+position = Vector2(198, 358)
 
-[node name="ForegroundParallax" type="Parallax2D" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ForegroundParallax" type="Parallax2D" parent="CanvasLayer"]
+light_mask = 0
 scroll_scale = Vector2(2, 2)
-scroll_offset = Vector2(78, 157)
-repeat_size = Vector2(608, 0)
+repeat_size = Vector2(2560, 0)
 repeat_times = 2
 
-[node name="Sprite2D" type="Sprite2D" parent="ForegroundParallax"]
-position = Vector2(774, 733)
-texture = ExtResource("5_4f4xb")
+[node name="Image" type="Sprite2D" parent="CanvasLayer/ForegroundParallax"]
+modulate = Color(0.720467, 0.720468, 0.720467, 1)
+position = Vector2(777, 365)
+texture = ExtResource("7_ew61w")
 
 [node name="UI" type="CanvasLayer" parent="."]
 visible = false

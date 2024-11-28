@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvrqqxr1slwqj"
-path="res://.godot/imported/PineTops.png-d789d601c23aa78b0c9f5421bdca4357.ctex"
+uid="uid://ct3ex4ht6av68"
+path="res://.godot/imported/background1.png-a44d78bededebe7a201c901af9d9ce13.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/PineTops.png"
-dest_files=["res://.godot/imported/PineTops.png-d789d601c23aa78b0c9f5421bdca4357.ctex"]
+source_file="res://assets/background1.png"
+dest_files=["res://.godot/imported/background1.png-a44d78bededebe7a201c901af9d9ce13.ctex"]
 
 [params]
 

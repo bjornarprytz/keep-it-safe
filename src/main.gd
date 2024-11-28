@@ -3,7 +3,6 @@ extends Node2D
 @onready var camera: Camera2D = %Camera
 @onready var player: CharacterBody2D = %Player
 @onready var dialogue: Dialogue = %Dialogue
-@onready var nøkken: Sprite2D = %"Nøkken"
 
 
 @onready var text:DialogueResource  = preload("res://dialogue/test.dialogue")

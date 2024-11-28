@@ -8,6 +8,10 @@ Stipulation: Text based
 
 ### First Loop
 
+- Troll
+- New Font
+
+
 - Dialogue
   - Dialogue trees
   - Speech bubbles
