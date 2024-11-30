@@ -12,13 +12,13 @@ script = ExtResource("1_2625m")
 
 [node name="Pixel" type="Sprite2D" parent="."]
 unique_name_in_owner = true
-self_modulate = Color(1, 1, 0, 1)
+self_modulate = Color(1, 0.87451, 0, 1)
 texture = ExtResource("1_bprg0")
 
 [node name="Light" type="PointLight2D" parent="Pixel"]
 unique_name_in_owner = true
 scale = Vector2(0.195313, 0.195313)
-color = Color(1, 1, 0, 1)
+color = Color(1, 0.87451, 0, 1)
 texture = ExtResource("3_0da1d")
 
 [node name="Shape" type="CollisionShape2D" parent="."]

@@ -8,17 +8,15 @@ Stipulation: Text based
 
 ### First Loop
 
-- Troll
-- New Font
-
+- Opening scene
 
 - Dialogue
-  - Dialogue trees
-  - Speech bubbles
+  - Freeze character
+  - Dialogue directly in choice rather than repeat
+  - Icon to show click to next
+  - Font for italics
 
-- Troll dialogue
-
-- Opening scene
+- Outro
 
 - Push release with `./push_release.sh`
 

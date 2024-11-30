@@ -16,9 +16,11 @@ func _process(_delta: float) -> void:
 	camera.position.x = player.position.x
 
 func _on_exit_body_entered(body: Node2D) -> void:
-	
-	$UI.show()
-	dialogue.start(text, "start")
-	
-	#print("%s exited" % [body.name])
-	#get_tree().call_deferred("reload_current_scene") # TODO: Load next scene, not the same
+	if body.owner is Player:
+		get_tree().call_deferred("reload_current_scene")
+
+
+func _on_troll_area_entered(area: Area2D) -> void:
+	if area.owner is Player:
+		$UI.show()
+		dialogue.start(text, "start")
