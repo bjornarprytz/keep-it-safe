@@ -62,6 +62,20 @@ func fade_in(node: CanvasItem, duration: float) -> Tween:
 
 	return tween
 
+func fade_from_black(node: CanvasItem, duration: float) -> Tween:
+	var base_modulate = node.modulate
+	var tween = node.create_tween()
+	node.modulate = Color.BLACK
+	tween.tween_property(node, "modulate", base_modulate, duration)
+	
+	return tween
+
+func fade_to_black(node: CanvasItem, duration: float) -> Tween:
+	var tween = node.create_tween()
+	tween.tween_property(node, "modulate", Color.BLACK, duration)
+	
+	return tween
+
 func to_dictionary(o: Variant) -> Dictionary:
 	var dict = {}
 	

@@ -50,7 +50,7 @@ shape = SubResource("WorldBoundaryShape2D_iakng")
 unique_name_in_owner = true
 position = Vector2(53, 645)
 
-[node name="Fireflies" type="Node" parent="."]
+[node name="Fireflies" type="Node2D" parent="."]
 
 [node name="FireflySwarm" parent="Fireflies" instance=ExtResource("8_yciiv")]
 position = Vector2(422, 578)
@@ -72,7 +72,7 @@ position = Vector2(2062, 601)
 type = 1
 count = 1
 
-[node name="Moths" type="Node" parent="."]
+[node name="Moths" type="Node2D" parent="."]
 
 [node name="MothSwarm" parent="Moths" instance=ExtResource("8_yciiv")]
 position = Vector2(-199, 598)
@@ -156,6 +156,7 @@ position = Vector2(198, 358)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ForegroundParallax" type="Parallax2D" parent="CanvasLayer"]
+unique_name_in_owner = true
 light_mask = 0
 scroll_scale = Vector2(2, 2)
 repeat_size = Vector2(2560, 0)
@@ -163,7 +164,8 @@ repeat_times = 2
 
 [node name="Image" type="Sprite2D" parent="CanvasLayer/ForegroundParallax"]
 modulate = Color(0.720467, 0.720468, 0.720467, 1)
-position = Vector2(777, 365)
+position = Vector2(777, 360.5)
+scale = Vector2(1, 1.00139)
 texture = ExtResource("7_ew61w")
 
 [node name="UI" type="CanvasLayer" parent="."]

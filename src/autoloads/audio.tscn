@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dxs4x23qbki67"]
+
+[ext_resource type="Script" path="res://autoloads/audio.gd" id="1_hgkie"]
+
+[node name="Audio" type="AudioStreamPlayer"]
+volume_db = -10.0
+script = ExtResource("1_hgkie")

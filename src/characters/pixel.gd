@@ -27,13 +27,15 @@ func _process(_delta: float) -> void:
 
 func moth_landed(moth: Moth) -> void:
 	landed_moths += 1
+	if landed_moths == moth_tolerance:
+		Events.gameOver.emit(false)
 	_update_light_intensity()
 	
 	await Utility.shake(pixel, .2, 3.0, Vector2.ZERO).finished
 
 func _update_light_intensity() -> void:
 	var elevation = abs((pixel.position.y - pixel_boundary) / (pixel_boundary * 2))
-	var clutter = 1.0 - (landed_moths / float(moth_tolerance))
+	var clutter = 1.0 - min((landed_moths / float(moth_tolerance)), 1.0)
 	
 	var strength = elevation * clutter
 	

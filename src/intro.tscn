@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://ceq5rvudybgcx"]
+
+[ext_resource type="Script" path="res://intro.gd" id="1_t5fgj"]
+[ext_resource type="Texture2D" uid="uid://cr21mmic15g1s" path="res://assets/K.png" id="2_bol1h"]
+
+[node name="Intro" type="Node2D"]
+script = ExtResource("1_t5fgj")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(-117, -8)
+texture = ExtResource("2_bol1h")
+centered = false
+
+[node name="Cam" type="Camera2D" parent="."]
+unique_name_in_owner = true
+anchor_mode = 0

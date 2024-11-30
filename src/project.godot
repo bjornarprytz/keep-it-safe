@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="keep-it-safe"
-run/main_scene="res://main.tscn"
+run/main_scene="res://intro.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -21,6 +21,7 @@ Utility="*res://autoloads/utility.gd"
 Events="*res://autoloads/event_bus.gd"
 Create="*res://autoloads/factory.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+Audio="*res://autoloads/audio.tscn"
 
 [dialogue_manager]
 
