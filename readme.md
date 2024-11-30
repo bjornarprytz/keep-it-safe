@@ -11,12 +11,9 @@ Stipulation: Text based
 - Opening scene
 
 - Dialogue
-  - Freeze character
   - Dialogue directly in choice rather than repeat
   - Icon to show click to next
   - Font for italics
-
-- Outro
 
 - Push release with `./push_release.sh`
 

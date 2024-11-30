@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://73jm5qjy52vq"]
+[gd_scene load_steps=5 format=3 uid="uid://73jm5qjy52vq"]
 
 [ext_resource type="Script" path="res://dialogue.gd" id="1_36de5"]
 [ext_resource type="Theme" uid="uid://bhttketftlysp" path="res://global_theme.tres" id="2_8jea3"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
+[ext_resource type="FontFile" uid="uid://xlkdaptbs8l3" path="res://assets/fonts/Sabo-Filled.otf" id="3_obs2y"]
 
 [node name="PanelContainer" type="PanelContainer"]
 clip_children = 2
@@ -30,6 +31,7 @@ unique_name_in_owner = true
 modulate = Color(1, 1, 1, 0.501961)
 layout_mode = 2
 mouse_filter = 1
+theme_override_fonts/normal_font = ExtResource("3_obs2y")
 bbcode_enabled = true
 text = "Character"
 fit_content = true

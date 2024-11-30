@@ -157,8 +157,10 @@ Troll becomes distracted, trying to figure out your “game.” You take the opp
 ~ failure
 [i]The troll grabs at you, nearly snatching the golden pixel! You barely escape, but you’re forced to give away the pixel.[/i]
 [i][color=red]Failure![/color][/i]
+do Events.gameOver.emit(true)
 => END
 
 ~ success
 [i][color=green]Success![/color][/i]
+do Events.gameOver.emit(true)
 => END

@@ -6,6 +6,7 @@ extends Area2D
 
 func _on_area_entered(area: Area2D) -> void:
 	if area.owner is Player:
+		area.owner.stopped = true
 		var tween = create_tween().set_ease(Tween.EASE_IN)
 		sprite.modulate.a = 0.0
 		sprite.show()

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ctov0pj1tqhdm" path="res://assets/troll.png" id="1_tx1np"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_drnh7"]
-size = Vector2(175, 122)
+size = Vector2(10, 122)
 
 [node name="Troll" type="Area2D"]
 script = ExtResource("1_i44f8")
