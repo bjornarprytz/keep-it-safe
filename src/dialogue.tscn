@@ -1,9 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://73jm5qjy52vq"]
+[gd_scene load_steps=6 format=3 uid="uid://73jm5qjy52vq"]
 
 [ext_resource type="Script" path="res://dialogue.gd" id="1_36de5"]
 [ext_resource type="Theme" uid="uid://bhttketftlysp" path="res://global_theme.tres" id="2_8jea3"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
 [ext_resource type="FontFile" uid="uid://xlkdaptbs8l3" path="res://assets/fonts/Sabo-Filled.otf" id="3_obs2y"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6e6dx"]
+draw_center = false
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
 
 [node name="PanelContainer" type="PanelContainer"]
 clip_children = 2
@@ -43,4 +50,13 @@ layout_mode = 2
 size_flags_vertical = 3
 text = "Dialogue..."
 
+[node name="HightlightBorder" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_6e6dx")
+
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

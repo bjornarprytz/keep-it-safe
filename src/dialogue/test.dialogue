@@ -1,76 +1,60 @@
 ~ start
 Troll: "Stooop! What’s thiiis? A tiny thing, wanderin' alooone... Carryin' somethin', aren't ya? Hmm, whaat is [color=ffdf00]it[/color]?"
-- It's nothing
-	You: "It’s nothing. Just something I found."
+- It’s nothing. Just something I found.
 	=> nothing1
-- None of you concern
-	You: "What I carry is none of your concern."
+- What I carry is none of your concern.
 	=> none_of_your_concern
-- Not worth your time
-	You: "It’s just a trinket, not worth your time."
+- It’s just a trinket, not worth your time.
 	=> trinket
 => END
 
 ~ nothing1
 [i]Troll squints at you, leaning closer.[/i]
 Troll: "Tiny, tiny lies from a tiny, tiny thing. Tell meee, little one — what’s in yer hand? Hmm? Hmm?"
-- My keepsake
-	You: "It’s...a keepsake. From a friend."
+- It’s...a keepsake. From a friend.
 	=> keepsake
-- Worthless to you
-	You: "It’s shiny, but worthless to you!"
+- It’s shiny, but worthless to you!
 	=> worthless
-- Behind you!
-	You: "Oh no! I think I dropped it behind you!"
+- Oh no! I think I dropped it behind you!
 	=> behind_you
-- Already told you
-	You: "I already told you — it’s nothing!"
+- I already told you — it’s nothing!
 	=> nothing2
 => END
 
 ~ keepsake
 [i]The troll snorts, its breath heavy with the scent of mushrooms and damp earth.[/i]
 Troll: "Frieeend? Trolls don’t haaave friends. Trolls only haaave things! Show me—[color=ffdf00]it[/color]!"
-- It's mine
-	You: "No! It's mine!"
+- No! It's mine!
 	=> failure
-- It's cursed
-	You: "It's cursed! You don't want to touch it!"
+- It's cursed! You don't want to touch it!
 	=> cursed
 => END
 
 ~ worthless
 [i]Troll’s eyes gleam as it leans closer.[/i]
 Troll: "Shiiiny? Trolls [shake]LOVE[/shake] shiny things. Show it, or trolls might taaake [color=ffdf00]it[/color]!"
-- It's just paint
-	You: "It’s really not worth it. It’s just [color=gold]golden[/color] paint!"
+- It’s really not worth it. It’s just golden paint!
 	=> golden
-- Behind you!
-	You: "Oh no! I think I dropped it behind you!"
+- Oh no! I think I dropped it behind you!
 	=> behind_you
 => END
 
 ~ nothing2
 [i]Troll huffs, its face scrunching up in mock disbelief.[/i]
 Troll: "Nothiiing? Trolls don’t believe in nothiiing. Liiiies! You’ll tell me, or trolls will take [color=ffdf00]it[/color]!"
-- My keepsake
-	You: "It’s...a keepsake. From a friend."
+- It’s...a keepsake. From a friend.
 	=> keepsake
-- Worthless to yoy
-	You: "It’s shiny, but worthless to you!"
+- It’s shiny, but worthless to you!
 	=> worthless
-- It's cursed
-	You: "It’s cursed! You don’t want to touch it!"
+- It’s cursed! You don’t want to touch it!
 	=> cursed
 
 
 ~ cursed
 [i]Troll recoils, its eyes wide with fear.[/i]
 Troll: "Cursed?! What kind of curse? Trolls don’t like curses... verrry bad luck for trolls."
-- Sneezing curse
-	You: "A sneezing curse — nonstop sneezing!"
-- Memory curse
-	You: "A memory curse — it makes trolls forget where their treasures are hidden."
+- A sneezing curse — nonstop sneezing!
+- A memory curse — it makes trolls forget where their treasures are hidden.
 
 [i]Troll grumbles and waves you away.[/i]
 Troll: "Nooo, no curses here! Take [color=ffdf00]it[/color] faaaar away, tiny thing. Shoo!"
@@ -88,14 +72,11 @@ Troll: "Wherrre? Where is [color=ffdf00]golden[/color]?! I seeee nothing!"
 ~ none_of_your_concern
 [i]Troll’s grin widens, teeth crooked and yellow.[/i]
 Troll: "Nooonne of my concern? But I am concerned! Verrry concerned. It’s sparkly, isn’t [color=ffdf00]it[/color]? Shiiiny? Tell me—what is [color=ffdf00]it[/color] made of?!"
-- Golden
-	You: "It’s not shiny. It’s just...[color=ffdf00]golden[/color]."
+- It’s not shiny. It’s just...golden.
 	=> golden
-- Why do you care?
-	You:  "Why do you even care?"
+- Why do you even care?
 	=> failure
-- It's cursed
-	You: "It’s cursed! Touch it, and terrible things will happen!"
+- It’s cursed! Touch it, and terrible things will happen!
 	=> cursed
 => END
 
@@ -103,27 +84,22 @@ Troll: "Nooonne of my concern? But I am concerned! Verrry concerned. It’s spar
 
 Troll squints suspiciously.
  "Gooolden? Gold is shiny, stupid tiny thing! Liiies again!"
-- It's fake
-	You: "It’s not real gold, just paint!"
+- It’s not real gold, just paint!
 	=> start
-- It's mine!
-	You: "Fine, it’s shiny. But it’s mine!"
+- Fine, it’s shiny. But it’s mine!
 	=> failure
 
 
 ~ trinket
 [i]Troll’s ears twitch, its curiosity undimmed.[/i]
 Troll: "A trinket? [shake]A TRIINKET[/shake]! A troll knows trinkets. Knows treasures. But I dooon’t know this one. Tell me — what does [color=ffdf00]it[/color] dooo?"
-- Nothing
-	You: "It doesn't [i]do[/i] anything!"
-- Protect
-	You: "It protects me."
+- It doesn't do anything!
+	=> nothing2
+- It protects me.
 	=> protects
-- A game piece
-	You: "It’s a game piece! Care to guess what it’s for?"
+- It’s a game piece! Care to guess what it’s for?
 	=> game_piece
-- You wouldn't understand
-	You: "You wouldn't even understand!"
+- You wouldn't even understand!
 	=> failure
 
 => END
@@ -131,11 +107,9 @@ Troll: "A trinket? [shake]A TRIINKET[/shake]! A troll knows trinkets. Knows trea
 ~ protects
 [i]Troll’s eyes widen with glee.[/i]
 Troll: "Protects you? Protects from whaat? Trolls? Wolves? Magic?! Tell meee, tiny thing — how does [color=ffdf00]it[/color] work?"
-- Not from you
-	You: "It doesn’t protect from you."
+- It doesn’t protect from you.
 	=> failure
-- Too complex for you
-	You: "You wouldn’t understand."
+- You wouldn’t understand.
 	=> failure
 
 ~ does_nothing
@@ -146,10 +120,8 @@ Troll: "Nothing? Things always dooo something! Trolls will take [color=ffdf00]it
 ~ game_piece
 [i]Troll scratches its head, intrigued.[/i]
 Troll: "A game?! Trolls love games! Is it for cards? For dice? For throwing?!"
-- Secret
-	You: "Oh, it’s for a troll game. A secret troll game!"
-- Guessing
-	You: "It’s for a guessing game! But only smart trolls can figure it out."
+- Oh, it’s for a troll game. A secret troll game!
+- It’s for a guessing game! But only smart trolls can figure it out.
 
 Troll becomes distracted, trying to figure out your “game.” You take the opportunity to sneak away while it babbles about rules and guesses.
 => success

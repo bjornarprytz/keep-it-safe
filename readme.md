@@ -9,10 +9,9 @@ Stipulation: Text based
 ### First Loop
 
 - Opening scene
+  - Twinkle twinkle
 
 - Dialogue
-  - Dialogue directly in choice rather than repeat
-  - Icon to show click to next
   - Font for italics
 
 - Push release with `./push_release.sh`

@@ -1,6 +1,7 @@
 class_name Dialogue
 extends Control
 ## A basic dialogue balloon for use with Dialogue Manager.
+@onready var hightlight_border: PanelContainer = %HightlightBorder
 
 ## The action to use for advancing the dialogue
 @export var next_action: StringName = &"ui_accept"
@@ -160,3 +161,11 @@ func _on_gui_input(event: InputEvent) -> void:
 		next(dialogue_line.next_id)
 
 #endregion
+
+
+func _on_mouse_entered() -> void:
+	hightlight_border.show()
+
+
+func _on_mouse_exited() -> void:
+	hightlight_border.hide()
