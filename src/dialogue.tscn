@@ -54,7 +54,7 @@ text = "Dialogue..."
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
-mouse_filter = 1
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_6e6dx")
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]

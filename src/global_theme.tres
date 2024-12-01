@@ -1,8 +1,10 @@
-[gd_resource type="Theme" load_steps=7 format=3 uid="uid://bhttketftlysp"]
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://bhttketftlysp"]
 
 [ext_resource type="FontFile" uid="uid://dsxge848kmgxo" path="res://assets/fonts/Sabo-Regular.otf" id="1_ay8or"]
-[ext_resource type="FontFile" uid="uid://dnhy3nvy8qe4u" path="res://assets/fonts/Grand9K Pixel.ttf" id="2_ggcph"]
+[ext_resource type="FontFile" uid="uid://bpmximfaujfex" path="res://assets/fonts/m5x7.ttf" id="1_fel1p"]
+[ext_resource type="FontFile" uid="uid://ho515sg3f4hj" path="res://assets/fonts/monogram-extended-italic.ttf" id="3_832no"]
 [ext_resource type="FontFile" uid="uid://b5skvr8ealnht" path="res://assets/fonts/Bona_Nova_SC/BonaNovaSC-Bold.ttf" id="4_hijak"]
+[ext_resource type="FontFile" uid="uid://bn07jb4svlfly" path="res://assets/fonts/monogram-extended.ttf" id="4_osp6o"]
 [ext_resource type="FontFile" uid="uid://bb122o3gnfkmh" path="res://assets/fonts/Bona_Nova_SC/BonaNovaSC-Italic.ttf" id="5_x5u83"]
 [ext_resource type="FontFile" uid="uid://dcf1hls2gfcfc" path="res://assets/fonts/Bona_Nova_SC/BonaNovaSC-Regular.ttf" id="6_m0kks"]
 
@@ -16,11 +18,17 @@ shadow_size = 40
 shadow_offset = Vector2(-2, -2)
 
 [resource]
-default_font = ExtResource("2_ggcph")
+default_font = ExtResource("1_fel1p")
+default_font_size = 48
+Button/fonts/font = ExtResource("4_osp6o")
+Label/fonts/font = ExtResource("1_fel1p")
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_wikhh")
-RichTextLabel/font_sizes/normal_font_size = 24
+RichTextLabel/font_sizes/bold_font_size = 48
+RichTextLabel/font_sizes/italics_font_size = 48
+RichTextLabel/font_sizes/normal_font_size = 48
 RichTextLabel/fonts/bold_font = ExtResource("1_ay8or")
-RichTextLabel/fonts/normal_font = ExtResource("2_ggcph")
+RichTextLabel/fonts/italics_font = ExtResource("3_832no")
+RichTextLabel/fonts/normal_font = ExtResource("4_osp6o")
 Title/base_type = &"RichTextLabel"
 Title/font_sizes/bold_font_size = 32
 Title/font_sizes/italics_font_size = 32

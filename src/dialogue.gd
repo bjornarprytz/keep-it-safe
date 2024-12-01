@@ -166,6 +166,5 @@ func _on_gui_input(event: InputEvent) -> void:
 func _on_mouse_entered() -> void:
 	hightlight_border.show()
 
-
 func _on_mouse_exited() -> void:
 	hightlight_border.hide()

@@ -8,11 +8,10 @@ Stipulation: Text based
 
 ### First Loop
 
+- Sound effects
+
 - Opening scene
   - Twinkle twinkle
-
-- Dialogue
-  - Font for italics
 
 - Push release with `./push_release.sh`
 

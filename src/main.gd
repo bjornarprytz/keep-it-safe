@@ -4,7 +4,7 @@ extends Node2D
 @onready var player: CharacterBody2D = %Player
 @onready var dialogue: Dialogue = %Dialogue
 @onready var foreground_parallax: Parallax2D = %ForegroundParallax
-
+const scary_track = preload("res://assets/audio/KeepitsafeSCARYAMBIENT.wav")
 
 @onready var text:DialogueResource  = preload("res://dialogue/test.dialogue")
 
@@ -13,6 +13,7 @@ func _ready() -> void:
 	Events.gameOver.connect(on_game_over)
 	Utility.fade_from_black(self, 1.69)
 	Utility.fade_from_black(foreground_parallax, 1.69)
+	Audio.transition_to(scary_track)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
