@@ -23,3 +23,10 @@ texture = ExtResource("2_a0li1")
 [node name="Pixel" parent="." instance=ExtResource("3_6mtd5")]
 unique_name_in_owner = true
 position = Vector2(0, -8)
+
+[node name="Ears" type="AudioListener2D" parent="."]
+
+[node name="Mouth" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+
+[connection signal="area_entered" from="Pixel" to="." method="_on_pixel_area_entered"]

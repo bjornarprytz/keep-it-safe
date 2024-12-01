@@ -10,4 +10,5 @@ response_template = NodePath("ResponseExample")
 
 [node name="ResponseExample" type="Button" parent="."]
 layout_mode = 2
+theme_override_font_sizes/font_size = 24
 text = "Response example"

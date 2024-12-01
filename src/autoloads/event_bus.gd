@@ -10,3 +10,5 @@ func _on_game_over(success: bool):
 	result = success
 
 signal gameOver(success:bool)
+signal trollResponse(mood: Troll.TrollMood)
+signal playerMood(mood: Player.PlayerMood)

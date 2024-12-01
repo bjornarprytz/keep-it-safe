@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=9 format=3 uid="uid://bhttketftlysp"]
+[gd_resource type="Theme" load_steps=12 format=3 uid="uid://bhttketftlysp"]
 
 [ext_resource type="FontFile" uid="uid://dsxge848kmgxo" path="res://assets/fonts/Sabo-Regular.otf" id="1_ay8or"]
 [ext_resource type="FontFile" uid="uid://bpmximfaujfex" path="res://assets/fonts/m5x7.ttf" id="1_fel1p"]
@@ -7,6 +7,27 @@
 [ext_resource type="FontFile" uid="uid://bn07jb4svlfly" path="res://assets/fonts/monogram-extended.ttf" id="4_osp6o"]
 [ext_resource type="FontFile" uid="uid://bb122o3gnfkmh" path="res://assets/fonts/Bona_Nova_SC/BonaNovaSC-Italic.ttf" id="5_x5u83"]
 [ext_resource type="FontFile" uid="uid://dcf1hls2gfcfc" path="res://assets/fonts/Bona_Nova_SC/BonaNovaSC-Regular.ttf" id="6_m0kks"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ax1y3"]
+content_margin_left = 5.0
+content_margin_top = 1.0
+content_margin_right = 3.0
+content_margin_bottom = 3.0
+bg_color = Color(0.853765, 0.156583, 9.62615e-07, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8dadw"]
+content_margin_left = 5.0
+content_margin_top = 1.0
+content_margin_right = 3.0
+content_margin_bottom = 3.0
+bg_color = Color(0.568627, 0.0901961, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wk3c7"]
+content_margin_left = 5.0
+content_margin_top = 1.0
+content_margin_right = 3.0
+content_margin_bottom = 3.0
+bg_color = Color(0.568627, 0.0901961, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wikhh"]
 bg_color = Color(0, 0, 0, 1)
@@ -21,6 +42,9 @@ shadow_offset = Vector2(-2, -2)
 default_font = ExtResource("1_fel1p")
 default_font_size = 48
 Button/fonts/font = ExtResource("4_osp6o")
+Button/styles/hover = SubResource("StyleBoxFlat_ax1y3")
+Button/styles/normal = SubResource("StyleBoxFlat_8dadw")
+Button/styles/pressed = SubResource("StyleBoxFlat_wk3c7")
 Label/fonts/font = ExtResource("1_fel1p")
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_wikhh")
 RichTextLabel/font_sizes/bold_font_size = 48

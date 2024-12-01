@@ -183,9 +183,9 @@ offset_bottom = 26.0
 responses_menu = NodePath("../ResponsesMenu")
 
 [node name="ResponsesMenu" parent="UI" instance=ExtResource("7_fbnql")]
-offset_left = 433.0
+offset_left = 204.0
 offset_top = 390.0
-offset_right = 586.0
+offset_right = 357.0
 offset_bottom = 421.0
 
 [connection signal="area_entered" from="Troll" to="." method="_on_troll_area_entered"]

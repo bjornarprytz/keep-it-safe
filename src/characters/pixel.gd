@@ -20,7 +20,7 @@ func _process(_delta: float) -> void:
 
 	if distance > 0:
 		direction = direction.normalized()
-		position = direction * distance
+		pixel.position = direction * distance
 	
 	_update_light_intensity()
 

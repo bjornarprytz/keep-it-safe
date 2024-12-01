@@ -10,9 +10,13 @@ var state: State = State.IDLE
 
 @onready var body: Area2D = %Fly
 @onready var awareness: Area2D = %Awareness
+@onready var sound: AudioStreamPlayer2D = %Sound
 
 var _direction: Vector2 = Vector2(randf_range(-1, 1), randf_range(-1, 1)).normalized()
 var _target: Pixel = null
+
+func _ready() -> void:
+	sound.finished.connect(sound.play)
 
 func _course_correct() -> void:
 	var new_direction: Vector2 = _direction
@@ -39,3 +43,4 @@ func _on_awareness_area_entered(area: Area2D) -> void:
 	if area is Pixel:
 		state = State.FLYING
 		_target = area
+		Events.playerMood.emit(Player.PlayerMood.Shoo)
