@@ -8,8 +8,6 @@ Stipulation: Text based
 
 ### First Loop
 
-- Sound effects
-
 - Opening scene
   - Twinkle twinkle
 

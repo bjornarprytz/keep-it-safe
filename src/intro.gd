@@ -1,5 +1,6 @@
 extends Node2D
 @onready var cam: Camera2D = %Cam
+@onready var hint: RichTextLabel = %Hint
 
 var has_started: bool
 var bottom_y := 1260.0
@@ -16,6 +17,7 @@ func _start_sequence():
 	if has_started:
 		return
 	has_started = true
+	hint.hide()
 	var cam_tween = create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CUBIC)
 	
 	await cam_tween.tween_property(cam, "position:y", bottom_y, 8.0).finished
