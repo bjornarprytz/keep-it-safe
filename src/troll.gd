@@ -31,7 +31,7 @@ var sounds: Dictionary = {
 var is_revealed: bool
 
 func _ready() -> void:
-	Events.trollResponse.connect(_on_troll_response)
+	Events.trollMood.connect(_on_troll_response)
 
 func _on_troll_response(mood: TrollMood):
 	if mouth.playing:
@@ -44,6 +44,7 @@ func _on_area_entered(area: Area2D) -> void:
 		return
 	if area.owner is Player:
 		is_revealed = true
+		Events.playerMood.emit(Player.PlayerMood.Surprise)
 		area.owner.stopped = true
 		var tween = create_tween().set_ease(Tween.EASE_IN)
 		sprite.modulate.a = 0.0

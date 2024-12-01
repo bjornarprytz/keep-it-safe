@@ -17,6 +17,7 @@ var _target: Pixel = null
 
 func _ready() -> void:
 	sound.finished.connect(sound.play)
+	sound.pitch_scale = 1.0 + randf_range(-.1, .1)
 
 func _course_correct() -> void:
 	var new_direction: Vector2 = _direction

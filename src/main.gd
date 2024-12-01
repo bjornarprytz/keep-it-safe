@@ -35,4 +35,4 @@ func _on_troll_area_entered(area: Area2D) -> void:
 		dialog_started = true
 
 func on_game_over(success: bool):
-	get_tree().change_scene_to_file("res://outro.tscn")
+	get_tree().change_scene_to_file.call_deferred("res://outro.tscn")

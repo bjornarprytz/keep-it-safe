@@ -68,7 +68,7 @@ var sounds: Dictionary = {
 
 const SPEED = 200.0
 
-const utterance_cooldown: float = 4.69
+const utterance_cooldown: float = 3.69
 var is_utter_cooldown: bool
 
 var stopped: bool:
