@@ -24,8 +24,9 @@ func _ready() -> void:
 				fly = firefly_spawner.instantiate() as Node2D
 		fly.home = self
 		add_child(fly)
-		
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+
+
+func _on_area_entered(area: Area2D) -> void:
+	if area.owner is Player:
+		Events.playerMood.emit(Player.PlayerMood.Intrigued)

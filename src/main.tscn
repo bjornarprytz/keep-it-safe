@@ -69,6 +69,8 @@ count = 2
 
 [node name="FireflySwarm4" parent="Fireflies" instance=ExtResource("8_yciiv")]
 position = Vector2(2062, 601)
+monitoring = false
+monitorable = false
 type = 1
 count = 1
 
